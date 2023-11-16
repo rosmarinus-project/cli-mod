@@ -6,7 +6,18 @@
   <a href="https://pr.new/rosmarinus-project/cli-mod"><img src="https://developer.stackblitz.com/img/start_pr_dark_small.svg" alt="Start new PR in StackBlitz Codeflow"></a>
 </p>
 
+This npm is an useful tool for developing.
+
 # Install
 ```bash
 npm install @rosmarinus/cli-mod
 ```
+
+# Usage
+```bash
+
+# alias git branch clean. This command will delete local git branches that are not on remote
+gbc
+
+# alias encode ls. This command will encode the output of ls command
+els
