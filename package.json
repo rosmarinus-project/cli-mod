@@ -1,6 +1,6 @@
 {
   "name": "@rosmarinus/cli-mod",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "cli tool for rosmarinus projects",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
