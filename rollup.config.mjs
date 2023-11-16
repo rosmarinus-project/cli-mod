@@ -33,8 +33,6 @@ export default sync('src/*.ts')
   .map((input) => {
     const inputName = input.split('/').pop()?.split('.')[0] || '';
 
-    console.log('inputName', inputName);
-
     return [getConfig('cjs', inputName, '#!/usr/bin/env node'), getConfig('es', inputName)];
   })
   .flat();

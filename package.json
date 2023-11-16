@@ -1,6 +1,6 @@
 {
   "name": "@rosmarinus/cli-mod",
-  "version": "0.2.1",
+  "version": "0.0.0",
   "description": "cli tool for rosmarinus projects",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
@@ -9,7 +9,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "bin": {
-    "gbc": "dist/cjs/gbc/index.js"
+    "gbc": "dist/cjs/gbc/index.js",
+    "els": "dist/cjs/els/index.js"
   },
   "scripts": {
     "dev": "rollup -c rollup.config.mjs -w",
@@ -32,6 +33,7 @@
   "license": "MIT",
   "dependencies": {
     "@inquirer/prompts": "^3.3.0",
+    "commander": "^11.1.0",
     "tslib": "^2.6.2"
   },
   "devDependencies": {
