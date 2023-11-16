@@ -5,9 +5,7 @@ import { getCmdParams } from './common/cmd';
 
 async function main() {
   try {
-    const program = new Command();
-
-    program
+    const program = new Command()
       .command('els')
       .description('encode all file name in now dir')
       .option('-p, --prefix <prefix>', 'prefix of every file name');
