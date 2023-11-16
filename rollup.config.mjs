@@ -1,24 +1,40 @@
 import common from '@rosmarinus/common-plugins';
 import { defineConfig } from 'rollup';
+import { sync } from 'glob';
 
 const external = [];
 
 /**
  * @param {import('rollup').InternalModuleFormat} format
+ * @param {string} input
  * @param {string | undefined} banner
  */
-function getConfig(format, banner = undefined) {
+function getConfig(format, input, banner = undefined) {
   return defineConfig({
-    input: 'src/index.ts',
+    input: `src/${input}.ts`,
     output: {
-      file: `dist/${format}/index.js`,
+      file: `dist/${format}/${input}/index.js`,
       format,
       banner,
       sourcemap: true,
     },
     external,
-    plugins: [common()],
+    plugins: [
+      common({
+        ts: {
+          outDir: `dist/${format}/${input}`,
+        },
+      }),
+    ],
   });
 }
 
-export default [getConfig('cjs'), getConfig('es')];
+export default sync('src/*.ts')
+  .map((input) => {
+    const inputName = input.split('/').pop()?.split('.')[0] || '';
+
+    console.log('inputName', inputName);
+
+    return [getConfig('cjs', inputName, '#!/usr/bin/env node'), getConfig('es', inputName)];
+  })
+  .flat();

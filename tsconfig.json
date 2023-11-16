@@ -21,7 +21,7 @@
     "strict": true,                                      /* Enable all strict type-checking options. */
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
     "types": ["node", "jest"],
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
   },
   "include":[
     "src/**/*"
